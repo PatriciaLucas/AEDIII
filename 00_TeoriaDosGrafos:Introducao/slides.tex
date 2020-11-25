@@ -68,9 +68,12 @@ Exemplo: Grafo com $|V| = 8$ e $|E| = 10$
 %=====
 
 \begin{ftst}{Aplicações}{Teoria dos grafos}
-
+\vone
+\vone
 \centering
-\includegraphics[scale=0.5]{Figuras/socialmedia.png}\\
+\includegraphics[scale=0.5]{Figuras/redes.png}\\
+\vone
+\vone
 Representação da relação entre pessoas numa rede social.
 
 \end{ftst}
@@ -78,9 +81,12 @@ Representação da relação entre pessoas numa rede social.
 %=====
 
 \begin{ftst}{Aplicações}{Teoria dos grafos}
-
+\vone
+\vone
 \centering
-\includegraphics[scale=0.5]{Figuras/city.png}\\
+\includegraphics[scale=0.5]{Figuras/cidades.png}\\
+\vone
+\vone
 Representação da ligação entre cidades e suas distâncias.
 \end{ftst}
 
@@ -90,9 +96,9 @@ Representação da ligação entre cidades e suas distâncias.
 \justifying
 Um \textbf{dígrafo} ou \textbf{grafo dirigido} consiste de um conjunto não vazio $V$ de vértices e um conjunto $E$ de arestas (que também podem ser chamadas de arcos), onde cada aresta é da forma $(v_i,v_j)$, sendo: $(v_i,v_j) \neq (v_j,v_i)$.
 \vone
-\vone
+
 \centering
-\includegraphics[scale=0.6]{Figuras/digrafo.jpg}\\
+\includegraphics[scale=0.5]{Figuras/graph_digrafo.png}\\
 
 \end{ftst}
 
@@ -103,28 +109,13 @@ Um \textbf{dígrafo} ou \textbf{grafo dirigido} consiste de um conjunto não vaz
 \textbf{Facebook x Twitter}
 
 \vone
-\justifying
-Uma relação de amizade no Facebook pode ser facilmente representada como um grafo não direcionado, porque, se Ann é amiga de Bob, Bob também deve ser amigo de Ann. Não há direção, ambos são amigos um do outro.
+
 \vone
 \centering
-\includegraphics[scale=0.6]{Figuras/digrafo.jpg}\\
+\includegraphics[scale=0.5]{Figuras/facetwitter.png}\\
 
 \end{ftst}
 
-%=====
-
-\begin{ftst}{Dígrafos}{Teoria dos grafos}
-\centering
-\textbf{Facebook x Twitter}
-
-\vone
-\justifying
-Ao contrário do exemplo do Facebook, se Patrick segue Bob no Twitter, isso não exige que Bob siga Patrick de volta. Portanto, uma relação “seguir” deve ter um indicador de direção, mostrando qual vértice (usuário) tem uma aresta direcionada (segue) para o outro vértice.
-\vone
-\centering
-\includegraphics[scale=0.6]{Figuras/digrafo.jpg}\\
-
-\end{ftst}
 
 %=====
 
@@ -134,81 +125,76 @@ Um \textbf{multigrafo} é um grafo que possui mais de uma aresta interligando os
 \vone
 Formalmente, um multigrafo $G = (V,E,f$ é composto por um conjunto de vértices $V$, um conjunto de arestas $E$ e uma função $f$:
 \vone
-\vone
-\vone
 \centering
 \huge
 $f: \{E \rightarrow v_i, v_j \in V$ e $v_i \neq v_j \}$
 
 
+\include{Figuras/multigrafo}\\
+
 
 \end{ftst}
 
 %=====
 
-\begin{ftst}
-{Course Overview}
-{Course Structure}
-\begin{block}{Evaluation criteria}
-	\begin{center}
-		\small
-		\begin{tabular}{cccc} \hline
-			\textbf{Item}	& \textbf{Type}	&\textbf{Grades}\\
-			\hline
-			Case studies		& Short group projects		&35\\
-			Written exam		& Written exam	&40\\
-			Final Project		& Report and presentation		&25\\
-			\hline
-		\end{tabular}
-	\end{center}
-\end{block}
-
-\begin{block}{Other relevant Information}
-	\bitems Lectures slides, example R files, data, etc. available at \\
-	{\small \url{http://git.io/v3Kh8}}
-	\spitem Office hours: depends on the week. Please drop me a message to check availability.
-	\spitem Software/services used: R ({\scriptsize\url{http://cran.r-project.org/}}),\\Github ({\scriptsize\url{http://github.com/}}).
-	\eitem
-\end{block}
-\end{ftst}
-
-%=====
-
-\begin{ftst}
-{Course Overview}
-{Course Bibliography}
-\textbf{Main}:\\
-{\footnotesize
-\bitems Felipe Campelo (2018), \textit{Lecture Notes on Design and Analysis of Experiments}. Online: \url{http://git.io/v3Kh8} Version 2.12; Creative Commons BY-NC-SA 4.0.
-\item D.C. Montgomery, G.C. Runger (2010), \textit{Applied Statistics and Probability for Engineers}, John Wiley \& Sons.
-\eitem}
-\vhalf
-\textbf{Additional}:
-{\footnotesize
-\bitems D.C. Montgomery (2012), \textit{Design and Analysis of Experiments}, Wiley.
-\item Michael J. Crawley (2007), \textit{The R Book}, Wiley.
-\item B. Caffo (2015), \textit{Statistical inference for data science}, LeanPub - {\small\url{https://leanpub.com/LittleInferenceBook/}}
-\item J.J. Faraway (2002), \textit{Practical Regression and Anova using R} - {\small\url{http://goo.gl/ewMWL}}
-\item D. Wiens (2005), \textit{Introduction to Design and Analysis of Experiments} - {\small\url{http://goo.gl/hZXg1}}
-\eitem}
-\end{ftst}
-
-%=====
-
-\begin{ftst}
-{Course Overview}
-{Required / Desired background}
-This is a course on \textit{applied} experimental design and analysis. As such, a large portion of the course is dedicated to case studies in which the student will design experiments, collect (simulated) data, perform inference and report his or her analysis.
+\begin{ftst}{Pseudogarfo}{Teoria dos grafos}
+\justifying
+Um pseudografo é um multigrafo com a condição $v_i \neq v_j$ removida na função $f$, ou seja, um vértice pode ser unido a ele mesmo por uma aresta (laço).
 \vone
-It is \textbf{strongly reccomended} that the student should complete the free online course  \textit{R Programming}\footnote{{\scriptsize\url{https://www.coursera.org/course/rprog}}} \textbf{before the end of the second week} of the semester (except if the student is already fluent in R).
 \vone
-It is also \textbf{strongly reccomended} that the student should complete the free online course  \textit{Reproducible Research}\footnote{{\scriptsize\url{https://www.coursera.org/course/repdata}}} \textbf{before the end of the first month} of the semester (except if the student is already capable of writing reports using R Markdown).
+\centering
+\include{Figuras/pseudografo}\\
+
+
 \end{ftst}
 
 %=====
 
-%\input{FinalSlide.tex}
+\begin{ftst}{Incidência}{Teoria dos grafos}
+\justifying
+\begin{itemize}
+    \item Seja dois vértices $v_i$ e $v_j$, e uma aresta $a_k = (v_i,v_j)$.
+    \item A aresta $a_k$ é dita \textcolor{red}{\textbf{incidente}} a ambos vértices $v_i$ e $v_j$.
+    \item Duas arestas não paralelas que são incidentes a um mesmo vértice são ditas \textcolor{yellow}{\textbf{adjacentes}}.
+    \item Dois vértices que são ligados por uma mesma arestas também são ditos \textcolor{green}{\textbf{adjacentes}}. 
+\end{itemize}
+\vone
+\vone
+\centering
+\include{Figuras/incidencia}\\
+
+
+\end{ftst}
 
 %=====
+
+\begin{ftst}{Grau de um Vértice}{Teoria dos grafos}
+\justifying
+O grau de um vértice é definido como o número de arestas incidentes em tal vértice.
+\vone
+\vone
+\centering
+\include{Figuras/grau_vertice}\\
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Exercício}{Teoria dos grafos}
+\justifying
+\textbf{Teorema 1}: a soma dos graus de todos os vértices de um grafo G é igual a duas vezes o número de arestas do grafo.
+\vone
+\textbf{Teorema 2}: o número de vértices de grau ímpar de um grafo é sempre par.
+\vone
+\textbf{Pergunta}: Se G é um grafo com 14 vértices e 25 arestas, cujos vértices têm grau 3 ou 5, quantos vértices tem grau 3 e quantos tem grau 5?
+
+
+
+\end{ftst}
+
+%=====
+
+
 
 \end{document}
