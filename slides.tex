@@ -1,0 +1,214 @@
+\documentclass[t]{beamer}
+
+% Load general definitions
+\input{preamble.tex}
+
+% Specific definitions
+\title[]{Algoritmos e Estruturas de Dados III}
+\subtitle[]{Introdução à Teoria dos Grafos}
+\author[]{Patrícia Lucas\\{\footnotesize }}
+\institute{Bacharelado em Sistemas de Informação \\ IFNMG  - Campus Salinas}
+\date{\scriptsize Salinas\\Dezembro 2020}
+
+\begin{document}
+
+% cover page
+\setbeamertemplate{footline}{}
+\begin{frame}
+
+\begin{center}
+\includegraphics[width=.15\textwidth]{}
+\end{center}
+  \titlepage
+  \begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=south east,xshift=-5pt,yshift=5pt] at (current page.south east) {\tiny Versão 1.2020};
+  \node[anchor=south west,yshift=0pt] at (current page.south west) {\includegraphics[width=.25\textwidth]{Logos/salinas_horizontal_jpg.jpg}};
+  \end{tikzpicture}  
+\end{frame}
+
+% Main slides
+\begin{ftst}{Conceito}{Teoria dos grafos}
+
+\begin{itemize}
+    \item A teoria dos grafos é um subconjunto da matemática discreta. 
+    \item Um grafo é usado para modelar coisas que têm relações com outras coisas - essa definição vaga sugere a enorme flexibilidade dos grafos na resolução de problemas. 
+    \item O notável poder da teoria dos grafos foi usado para resolver problemas em praticamente todas as áreas.
+\end{itemize}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Terminologia}{Teoria dos grafos}
+
+Um grafo simples $G =(V,E)$ consiste de um conjunto não vazio $V$ de vértices e um conjunto que pode ou não ser vazio $E$ de arestas, cada aresta sendo um conjunto de dois vértices $(v_i, v_j)$ a partir de $V$, sendo $(v_i,v_j)=(v_j,v_i)$. \\
+\vone
+O número de vértices e arestas é denotado por $|V|$ e $|E|$, respectivamente.
+
+\centering \include{Figuras/graph1}
+Exemplo: Grafo com $|V| = 8$ e $|E| = 10$
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Aplicações}{Teoria dos grafos}
+\justifying
+\begin{itemize}
+    \item O projeto do sistema de água municipal utiliza a teoria dos grafos para modelar o fluxo de água para garantir que os requisitos de pressão sejam atendidos.
+    \item Redes sociais como Facebook e Twitter usam a teoria dos grafos para sugerir amigos e vender anúncios.
+    \item A Netflix usa a teoria dos grafos para recomendar filmes.
+    \item O Google Maps usa a teoria dos grafos para encontrar o caminho mais curto da sua casa até o seu destino.
+    \item A infraestrutura da Internet se baseia na teoria dos grafos para rotear seu tráfego de nó em nó na infraestrutura física da internet.
+    \item Os engenheiros de videogame usam a teoria dos grafos para direcionar os NPCs (personagens não jogadores) por seus mundos virtuais.
+\end{itemize}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Aplicações}{Teoria dos grafos}
+
+\centering
+\includegraphics[scale=0.5]{Figuras/socialmedia.png}\\
+Representação da relação entre pessoas numa rede social.
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Aplicações}{Teoria dos grafos}
+
+\centering
+\includegraphics[scale=0.5]{Figuras/city.png}\\
+Representação da ligação entre cidades e suas distâncias.
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Dígrafos}{Teoria dos grafos}
+\justifying
+Um \textbf{dígrafo} ou \textbf{grafo dirigido} consiste de um conjunto não vazio $V$ de vértices e um conjunto $E$ de arestas (que também podem ser chamadas de arcos), onde cada aresta é da forma $(v_i,v_j)$, sendo: $(v_i,v_j) \neq (v_j,v_i)$.
+\vone
+\vone
+\centering
+\includegraphics[scale=0.6]{Figuras/digrafo.jpg}\\
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Dígrafos}{Teoria dos grafos}
+\centering
+\textbf{Facebook x Twitter}
+
+\vone
+\justifying
+Uma relação de amizade no Facebook pode ser facilmente representada como um grafo não direcionado, porque, se Ann é amiga de Bob, Bob também deve ser amigo de Ann. Não há direção, ambos são amigos um do outro.
+\vone
+\centering
+\includegraphics[scale=0.6]{Figuras/digrafo.jpg}\\
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Dígrafos}{Teoria dos grafos}
+\centering
+\textbf{Facebook x Twitter}
+
+\vone
+\justifying
+Ao contrário do exemplo do Facebook, se Patrick segue Bob no Twitter, isso não exige que Bob siga Patrick de volta. Portanto, uma relação “seguir” deve ter um indicador de direção, mostrando qual vértice (usuário) tem uma aresta direcionada (segue) para o outro vértice.
+\vone
+\centering
+\includegraphics[scale=0.6]{Figuras/digrafo.jpg}\\
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Multigrafo}{Teoria dos grafos}
+\justifying
+Um \textbf{multigrafo} é um grafo que possui mais de uma aresta interligando os mesmos dois vértices (arestas múltiplas ou arestas paralelas). 
+\vone
+Formalmente, um multigrafo $G = (V,E,f$ é composto por um conjunto de vértices $V$, um conjunto de arestas $E$ e uma função $f$:
+\vone
+\vone
+\vone
+\centering
+\huge
+$f: \{E \rightarrow v_i, v_j \in V$ e $v_i \neq v_j \}$
+
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}
+{Course Overview}
+{Course Structure}
+\begin{block}{Evaluation criteria}
+	\begin{center}
+		\small
+		\begin{tabular}{cccc} \hline
+			\textbf{Item}	& \textbf{Type}	&\textbf{Grades}\\
+			\hline
+			Case studies		& Short group projects		&35\\
+			Written exam		& Written exam	&40\\
+			Final Project		& Report and presentation		&25\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{block}
+
+\begin{block}{Other relevant Information}
+	\bitems Lectures slides, example R files, data, etc. available at \\
+	{\small \url{http://git.io/v3Kh8}}
+	\spitem Office hours: depends on the week. Please drop me a message to check availability.
+	\spitem Software/services used: R ({\scriptsize\url{http://cran.r-project.org/}}),\\Github ({\scriptsize\url{http://github.com/}}).
+	\eitem
+\end{block}
+\end{ftst}
+
+%=====
+
+\begin{ftst}
+{Course Overview}
+{Course Bibliography}
+\textbf{Main}:\\
+{\footnotesize
+\bitems Felipe Campelo (2018), \textit{Lecture Notes on Design and Analysis of Experiments}. Online: \url{http://git.io/v3Kh8} Version 2.12; Creative Commons BY-NC-SA 4.0.
+\item D.C. Montgomery, G.C. Runger (2010), \textit{Applied Statistics and Probability for Engineers}, John Wiley \& Sons.
+\eitem}
+\vhalf
+\textbf{Additional}:
+{\footnotesize
+\bitems D.C. Montgomery (2012), \textit{Design and Analysis of Experiments}, Wiley.
+\item Michael J. Crawley (2007), \textit{The R Book}, Wiley.
+\item B. Caffo (2015), \textit{Statistical inference for data science}, LeanPub - {\small\url{https://leanpub.com/LittleInferenceBook/}}
+\item J.J. Faraway (2002), \textit{Practical Regression and Anova using R} - {\small\url{http://goo.gl/ewMWL}}
+\item D. Wiens (2005), \textit{Introduction to Design and Analysis of Experiments} - {\small\url{http://goo.gl/hZXg1}}
+\eitem}
+\end{ftst}
+
+%=====
+
+\begin{ftst}
+{Course Overview}
+{Required / Desired background}
+This is a course on \textit{applied} experimental design and analysis. As such, a large portion of the course is dedicated to case studies in which the student will design experiments, collect (simulated) data, perform inference and report his or her analysis.
+\vone
+It is \textbf{strongly reccomended} that the student should complete the free online course  \textit{R Programming}\footnote{{\scriptsize\url{https://www.coursera.org/course/rprog}}} \textbf{before the end of the second week} of the semester (except if the student is already fluent in R).
+\vone
+It is also \textbf{strongly reccomended} that the student should complete the free online course  \textit{Reproducible Research}\footnote{{\scriptsize\url{https://www.coursera.org/course/repdata}}} \textbf{before the end of the first month} of the semester (except if the student is already capable of writing reports using R Markdown).
+\end{ftst}
+
+%=====
+
+\input{FinalSlide.tex}
+
+%=====
+
+\end{document}
