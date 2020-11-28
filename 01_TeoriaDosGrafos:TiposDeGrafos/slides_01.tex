@@ -1,0 +1,221 @@
+\documentclass[t]{beamer}
+
+% Load general definitions
+\input{preamble.tex}
+
+% Specific definitions
+\title[]{Algoritmos e Estruturas de Dados III}
+\subtitle[]{Tipos de Grafos}
+\author[]{Patrícia Lucas\\{\footnotesize }}
+\institute{Bacharelado em Sistemas de Informação \\ IFNMG  - Campus Salinas}
+\date{\scriptsize Salinas\\Dezembro 2020}
+
+\begin{document}
+
+% cover page
+\setbeamertemplate{footline}{}
+\begin{frame}
+
+\begin{center}
+\includegraphics[width=.15\textwidth]{}
+\end{center}
+  \titlepage
+  \begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=south east,xshift=-5pt,yshift=5pt] at (current page.south east) {\tiny Versão 1.2020};
+  \node[anchor=south west,yshift=0pt] at (current page.south west) {\includegraphics[width=.25\textwidth]{Logos/salinas_horizontal_jpg.jpg}};
+  \end{tikzpicture}  
+\end{frame}
+
+% Main slides
+\begin{ftst}{Grafo nulo}{Tipos de Grafos}
+
+\begin{itemize}
+    \item Um vértice que possui grau zero é um vértice isolado.
+    \item É possível que um grafo não contenha nenhuma aresta. 
+    \item Nesse caso todos os vértices são isolados e o grafo é chamado grafo nulo.
+\end{itemize}
+\vone
+\centering
+\include{Figuras/grafo_nulo}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grafo Regular}{Tipos de Grafos}
+
+Um grafo regular é aquele no qual todos os vértices possuem o mesmo grau. Um grafo regular com vértices de grau $k$ é chamado de \textbf{k-regular}.
+
+\vone
+
+\centering \include{Figuras/grafo_regular}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grafo Completo}{Tipos de Grafos}
+
+Um grafo com $n$ vértices é chamado de completo, e denotado de $K_n$ , se para cada par de vértices distintos existe exatamente uma aresta conectando-os. Ou seja, é um grafo simples que contém o número máximo de arestas.
+\vone
+\centering
+\includegraphics[scale=0.4]{Figuras/grafo_completo.jpg}
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grafo Completo}{Tipos de Grafos}
+
+O número de arestas em um grafo completo é: 
+\vone
+\centering
+\huge
+$|E| = |V| (|V| - 1) / 2$
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Complemento de um Grafo}{Tipos de Grafos}
+\justifying
+O Complemento de um grafo simples $G$, denotado por $G'$, é o grafo simples que possui o mesmo conjunto de vértices de $G$, e tal que dois vértices distintos são adjacentes em $G'$ se não são em $G$.
+\vone
+\vone
+\centering
+\include{Figuras/complemento_grafo}\\
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Subgrafos}{Tipos de Grafos}
+
+Um subgrafo $G'$ do grafo $G = (V,E)$ é um grafo $(V',E')$ tal que $V' \subseteq V$ e $E' \subseteq E$.                    
+
+\begin{itemize}
+    \item Todo grafo é subgrafo dele mesmo.
+    \item O subgrafo de um subgrafo de $G$ é um subgrafo de $G$.
+    \item Um vértice de $G$ é um subgrafo de $G$.
+\end{itemize}
+\vone
+\centering
+\include{Figuras/subgrafo}\\
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Subgrafos especiais}{Tipos de Grafos}
+
+\begin{itemize}
+    \item \textbf{Clique:} uma clique é um subgrafo que é completo.
+    \item \textbf{Subgrafo induzido:} seja $H(W,F)$ um subgrafo de $G = (V,E)$. Uma aresta entre dois vértices de $W$ existe se e somente se essa aresta existe em $V$, dizemos que $H$ é um subgrafo induzido por $W$.
+    \item \textbf{Conjunto independente de vértices:} um subgrafo induzido de $G$ que não contém nenhuma aresta.
+\end{itemize}
+
+\centering
+\include{Figuras/subgrafos_especiais}\\
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Exercício}{Tipos de Grafos}
+
+Considere o grafo $G$:
+\vone
+\centering
+\include{Figuras/grafo_exercicio}\\
+\vone
+\begin{itemize}
+    \item Dê nome aos seus vértices e indique o grau de cada um deles.
+    \item Desenhe seu complementar $G’$.
+    \item Desenhe um subgrafo simples de $G$.
+    \item Desenhe um subgrafo clique de $G$.
+    \item Desenhe um subgrafo induzido de $G$.
+\end{itemize}
+
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Caminhos}{Tipos de Grafos}
+
+Caminho de $v_1$ a $v_n$ é uma sequência de arestas $(v_1,v_2),(v_2,v_3), \dots$, $(v_{n-1}, v_n)$, denotado como: $v_1, v_2, v_3, \dots, v_{n-1}, v_n$. 
+\vone
+O comprimento de um caminho é o seu número de arestas.
+\vone
+Exemplo: caminho de $v_1$ a $v_4$ de comprimento 8.
+
+\centering
+\include{Figuras/caminhos}\\
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{circuitos}{Tipos de Grafos}
+É um caminho de $v_1$ a $v_n$, onde $v_1 = v_n$ e nenhuma aresta é repetida.
+\vone
+Ex: circuito de $v_1$ a $v_1$ de comprimento 5.
+
+\vone
+\centering
+\include{Figuras/circuito}\\
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Ciclo}{Tipos de Grafos}
+É um circuito onde nenhum vértice é repetido.
+\vone
+Um laço é um ciclo de comprimento 1.
+\vone
+Ex: ciclo de $v_1$ a $v_1$ de comprimento 4.
+
+\vone
+\centering
+\include{Figuras/ciclo}\\
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grau de um Vértice}{Teoria dos grafos}
+\justifying
+O grau de um vértice é definido como o número de arestas incidentes em tal vértice.
+\vone
+\vone
+\centering
+\include{Figuras/grau_vertice}\\
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Exercício}{Teoria dos grafos}
+\justifying
+\textbf{Teorema 1}: a soma dos graus de todos os vértices de um grafo G é igual a duas vezes o número de arestas do grafo.
+\vone
+\textbf{Teorema 2}: o número de vértices de grau ímpar de um grafo é sempre par.
+\vone
+\textbf{Pergunta}: Se G é um grafo com 14 vértices e 25 arestas, cujos vértices têm grau 3 ou 5, quantos vértices tem grau 3 e quantos tem grau 5?
+
+
+
+\end{ftst}
+
+%=====
+
+
+
+\end{document}
