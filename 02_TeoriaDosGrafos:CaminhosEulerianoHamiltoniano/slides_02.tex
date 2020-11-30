@@ -1,0 +1,272 @@
+\documentclass[t]{beamer}
+
+% Load general definitions
+\input{preamble.tex}
+
+% Specific definitions
+\title[]{Algoritmos e Estruturas de Dados III}
+\subtitle[]{Caminhos Euleriano e Hamiltoniano}
+\author[]{Patrícia Lucas\\{\footnotesize }}
+\institute{Bacharelado em Sistemas de Informação \\ IFNMG  - Campus Salinas}
+\date{\scriptsize Salinas\\Dezembro 2020}
+
+\begin{document}
+
+% cover page
+\setbeamertemplate{footline}{}
+\begin{frame}
+
+\begin{center}
+\includegraphics[width=.15\textwidth]{}
+\end{center}
+  \titlepage
+  \begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=south east,xshift=-5pt,yshift=5pt] at (current page.south east) {\tiny Versão 1.2020};
+  \node[anchor=south west,yshift=0pt] at (current page.south west) {\includegraphics[width=.25\textwidth]{Logos/salinas_horizontal_jpg.jpg}};
+  \end{tikzpicture}  
+\end{frame}
+
+
+%=====
+
+% Main slides
+\begin{ftst}{Caminhos Eulerianos}{História}
+\vone
+\vone
+\begin{minipage}{.5\textwidth}
+    \centering
+    \justifying
+    \includegraphics[scale=0.23]{Figuras/euleriano_1.png}
+\end{minipage}%
+\hfill
+\begin{minipage}{.5\textwidth}
+    \footnotesize
+    \justifying
+    \begin{itemize}
+        \item Havia sete pontes em Königsberg conectando duas grandes ilhas cercadas pelo rio Prególia e duas porções de continentes divididas pelo mesmo rio.
+        \item O problema ou apenas um quebra-cabeças com as pontes de Königsberg era poder andar pela cidade atravessando todas as sete pontes apenas uma vez. 
+        \item Não deve haver nenhuma ponte não cruzada.
+        \item Não deve haver nenhuma ponte não cruzada.
+    \end{itemize}
+\end{minipage}%
+\vone
+\vone
+\tiny
+Fonte da imagem: \hypertarget{clique aqui.}{https://bit.ly/36sPR8J}
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Caminhos Eulerianos}{História}
+
+\begin{minipage}{.5\textwidth}
+    \vone
+    \centering
+    \includegraphics[scale=0.3]{Figuras/euler.jpeg}
+\end{minipage}%
+\hfill
+\begin{minipage}{.5\textwidth}
+    \justifying
+    \footnotesize
+    Às vezes é razoável desistir rapidamente. Foi assim que Euler resolveu esse problema - ele desistiu logo.
+    \vone
+    Em vez de tentar resolvê-lo, ele adotou uma abordagem diferente, tentando provar que não é possível andar pela cidade atravessando cada ponte uma única vez.
+\end{minipage}
+\vone
+\tiny
+Fonte da imagem: \hypertarget{clique aqui.}{https://bit.ly/36sPR8J}
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Caminhos Eulerianos}{História}
+\vone
+\vone
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.21]{Figuras/euleriano_2.png}
+\end{minipage}%
+\hfill
+\begin{minipage}{.5\textwidth}
+    \justifying
+    \footnotesize
+    Existem quatro lugares distintos: duas ilhas e duas partes do continente. 
+    \vone
+    Existem sete pontes interligando esses lugares. 
+    \vone
+    Padrões encontrados:
+    \begin{itemize}
+        \item Há um número ímpar de pontes conectadas a cada terra.
+        \item Se você tiver que atravessar cada ponte uma vez, poderá entrar em um terreno e deixá-lo, se houver 2 pontes.
+    \end{itemize}
+\end{minipage}
+
+\vone
+\vone
+\tiny
+Fonte da imagem: \hypertarget{clique aqui.}{https://bit.ly/36sPR8J}
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Caminhos Eulerianos}{História}
+
+Vamos adicionar uma nova ponte para ver como o número de pontes conectadas gerais muda e se resolve o problema.
+
+\centering
+\includegraphics[scale=0.28]{Figuras/euleriano_6.png}
+
+\justifying
+\tiny
+Fonte da imagem: \hypertarget{clique aqui.}{https://bit.ly/36sPR8J}
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Caminhos Eulerianos}{História}
+
+Agora que temos dois pares (4 e 4) e dois ímpares (3 e 5) de pontes conectando os quatro pedaços de terra, vamos desenhar uma nova rota com a adição desta nova ponte.
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.22]{Figuras/euleriano_3.png}
+\end{minipage}%
+\hfill
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.22]{Figuras/euleriano_4.png}
+\end{minipage}
+
+Ou seja, o número de pontes pares e ímpares determina se a solução é possível ou não.
+\vone
+\tiny
+Fonte da imagem: \hypertarget{clique aqui.}{https://bit.ly/36sPR8J}
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Caminhos Eulerianos}{História}
+\footnotesize
+Foi quando Euler começou a "converter" terrenos e pontes em algo que conhecemos como grafos.
+
+\centering
+\includegraphics[scale=0.3]{Figuras/euleriano_5.png}
+
+\justifying
+\footnotesize
+Euler mostrou que a possibilidade de um passeio pelo grafo (cidade) atravessando cada aresta (ponte) uma única vez depende estritamente dos graus dos vértices (terrenos). Esse caminho (em sua homenagem) ficou conhecido como \textbf{Caminho Euleriano}. \\
+\vone
+\tiny
+Fonte da imagem: \hypertarget{clique aqui.}{https://bit.ly/36sPR8J}
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Caminhos Eulerianos}{Definições}
+
+\begin{itemize}
+    \item Um \textbf{caminho euleriano} é um caminho que passa exatamente uma vez por cada aresta de um grafo;
+    \item Um \textbf{ciclo euleriano} é um caminho euleriano fechado, ou seja, começa e termina no mesmo vértice;
+    \item Um \textbf{grafo euleriano} é um grafo que contém um ciclo euleriano;
+    \item Um \textbf{grafo semi-euleriano} é um grafo que não contém um ciclo euleriano, mas contém um caminho euleriano.
+\end{itemize}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grafo Euleriano}{Caminhos Eulerianos}
+\vone
+Um grafo conexo $G$ é um grafo euleriano se e somente se todos os seus vértices possuem grau par.
+\vone
+\centering
+\include{Figuras/grafo_euleriano}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grafo Semi-euleriano}{Caminhos Eulerianos}
+
+Um grafo conexo $G$ é um grafo semi-euleriano se e somente se existem no máximo 2 vértices de grau ímpar.
+\vone
+O caminho inicia-se em um vértice ímpar e termina em outro vértice ímpar.
+
+\vone
+\centering
+\include{Figuras/grafo_semieuleriano}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Problema Euleriano: carteiro chinês}{Caminhos Eulerianos}
+
+O carteiro deseja encontrar a rota mais curta possível que inclua cada uma das ruas no mapa uma única vez e o retorna ao seu ponto de partida nos correios.
+
+\vone
+\centering
+\includegraphics[scale=0.5]{Figuras/carteiro.jpg}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{História}{Ciclo Hamiltoniano}
+\vone
+\vone
+\begin{minipage}{.5\textwidth}
+\footnotesize
+    O ciclo hamiltoniano recebeu o nome de Sir William Rowan Hamilton que, em 1857, inventou um jogo de quebra-cabeça que envolvia a caça a um ciclo hamiltoniano. 
+    \vone
+    O jogo, chamado de jogo Icosian, foi distribuído como um grafo dodecaedro com um buraco em cada vértice. Para resolver o quebra-cabeça ou vencer o jogo, era preciso usar estacas e cordas para encontrar o ciclo hamiltoniano - um circuito fechado que visitava todos os buracos exatamente uma vez.
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.5]{Figuras/ciclo_hamiltoniano.jpg}
+\end{minipage}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Definições}{Caminho Hamiltoniano}
+\vone
+\vone
+\begin{itemize}
+    \item Um \textbf{caminho hamiltoniano} é um caminho que passa exatamente uma vez por cada vértice de um grafo;
+    \item Um \textbf{ciclo hamiltoniano} é um caminho hamiltoniano fechado, ou seja, começa e termina no mesmo vértice;
+    \item Um \textbf{grafo hamiltoniano} é um grafo que contém um ciclo hamiltoniano.
+\end{itemize}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grafo hamiltoniano}{Caminho Hamiltoniano}
+\vone
+Não existe uma regra para determinar se um grafo é hamiltoniano!
+\vone
+\centering
+\include{Figuras/grafo_hamiltoniano}
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Problema hamiltoniano: caixeiro viajante }{Caminho Hamiltoniano}
+
+Dada uma lista de cidades e as distâncias entre cada par de cidades, qual é o caminho mais curto possível que visita cada cidade uma única vez e retorna a cidade de origem?
+
+\vone
+\centering
+\includegraphics[scale=0.5]{Figuras/caixeiro.jpg}
+
+\end{ftst}
+
+%=====
+
+
+\end{document}
