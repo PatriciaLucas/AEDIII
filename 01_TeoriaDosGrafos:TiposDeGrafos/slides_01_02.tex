@@ -1,0 +1,216 @@
+\documentclass[t]{beamer}
+
+% Load general definitions
+\input{preamble.tex}
+
+% Specific definitions
+\title[]{Algoritmos e Estruturas de Dados III}
+\subtitle[]{Tipos de Grafos - Parte 2}
+\author[]{Patrícia Lucas\\{\footnotesize }}
+\institute{Bacharelado em Sistemas de Informação \\ IFNMG  - Campus Salinas}
+\date{\scriptsize Salinas\\Dezembro 2020}
+
+\begin{document}
+
+% cover page
+\setbeamertemplate{footline}{}
+\begin{frame}
+
+\begin{center}
+\includegraphics[width=.15\textwidth]{}
+\end{center}
+  \titlepage
+  \begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=south east,xshift=-5pt,yshift=5pt] at (current page.south east) {\tiny Versão 1.2020};
+  \node[anchor=south west,yshift=0pt] at (current page.south west) {\includegraphics[width=.25\textwidth]{Logos/salinas_horizontal_jpg.jpg}};
+  \end{tikzpicture}  
+\end{frame}
+
+% Main slides
+\begin{ftst}{Grafo bipartido}{Tipos de Grafos}
+
+\begin{itemize}
+    \item Um grafo é bipartido se seus vértices podem ser divididos em dois conjuntos disjuntos não-vazios $N_1$ e $N_2$, tal que dois vértices são adjacentes se, e somente se, um deles pertence a $N_1$ e outro a $N_2$.
+    \item Se cada vértice de $N_1$ é adjacente a todos os vértices de $N_2$, e vice-versa, temos um grafo bipartido completo. 
+    \item Notação do exemplo: $K_{5,3}$
+\end{itemize}
+\vone
+\centering
+\include{Figuras/grafo_bipartido}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grafo bipartido}{Tipos de Grafos}
+
+Um grafo G é bipartido se e somente se todo ciclo de G possuir comprimento par.
+\vone
+
+\centering \include{Figuras/grafo_bipartido_2}
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grafos isomorfos}{Tipos de Grafos}
+\begin{itemize}
+    \item Dois grafos podem parecer diferentes em sua representação visual, mas ainda assim serem o mesmo grafo segundo a definição formal.\\
+    \item O importante é saber distinguir entre dois grafos que têm estruturas fundamentais diferentes.
+\end{itemize}
+
+\vone
+\centering
+\include{Figuras/grafo_isomorfos}
+
+
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Grafos isomorfos}{Tipos de Grafos}
+
+Para mostrar que duas estruturas são isomorfas, precisamos:
+\vone
+\begin{itemize}
+    \item Obter uma bijeção entre os elementos das duas estruturas.
+    \item Mostrar que as suas propriedades fundamentais são preservadas.
+\end{itemize}
+
+\vone
+
+No caso dos grafos, os elementos são vértices e arestas, e a propriedade fundamental é “quais arestas conectam quais vértices” .
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Grafos isomorfos}{Tipos de Grafos}
+
+Os grafos $G$ e $H$ a seguir são, essencialmente, o mesmo grafo, considerando as bijeções:
+\vone
+
+\include{Figuras/grafo_isomorfos_2}
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Grafos isomorfos}{Tipos de Grafos}
+
+Exemplos de condições nas quais dois grafos não são isomorfos:
+\vone
+\begin{itemize}
+    \item Um grafo tem mais vértices que o outro;
+    \item Um grafo tem mais arestas que o outro;
+    \item Um grafo tem arcos paralelos, um laço ou um ciclo, e o outro não;
+    \item Um grafo tem um vértice de grau k e o outro não;
+    \item Um grafo é conexo e outro não, etc. 
+\end{itemize}
+
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Exercícios}{Tipos de Grafos}
+
+Os grafos $G$ e $H$ a seguir são isomorfos? Se sim, apresente as bijeções que estabelecem o isomorfismo.
+
+\vone
+\centering
+\include{Figuras/ex_isomorfos_1}
+
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Exercícios}{Tipos de Grafos}
+
+Os grafos $G$ e $H$ a seguir são isomorfos? Se sim, apresente as bijeções que estabelecem o isomorfismo.
+
+\vone
+\centering
+\include{Figuras/ex_isomorfos_2}
+
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Exercícios}{Tipos de Grafos}
+
+Prove que os dois grafos a seguir não são isomorfos.
+
+\vone
+\centering
+\include{Figuras/ex_isomorfos_3}
+
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Grafos Planares}{Tipos de Grafos}
+
+Um grafo planar é um grafo que pode ser representado em um plano de modo que suas arestas não se interceptam.
+
+\vone
+\centering
+\include{Figuras/grafo_planar}
+
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Grafos Planares}{Tipos de Grafos}
+\begin{itemize}
+    \item A representação planar de um grafo divide o plano em regiões (uma é ilimitada).
+    \item Seja $G$ um grafo plano conexo com $|E|$ arestas e $|V|$ vértices, com um número $R$ de regiões na representação planar de $G$, temos: $R=|E| - |V|+2$ (fórmula de Euler)
+\end{itemize}
+
+\vone
+\centering
+\include{Figuras/grafo_planar_2}
+
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Grafos Planares}{Tipos de Grafos}
+
+Seja $G$ é um grafo planar simples com $|V|$ vértices e $|E|$ arestas, tal que $|V| \geq 3$. Temos que: $|E| \leq 3|V| - 6$.
+
+\vone
+\vone
+\vone
+\vone
+
+\centering
+\include{Figuras/grafo_planar_3}
+
+\end{ftst}
+
+
+%=====
+
+\begin{ftst}{Grafos Planares}{Tipos de Grafos}
+\begin{itemize}
+    \item Todo grafo planar simples tem um vértice de grau no máximo 5.
+    \item Os grafos completos $K_5$ e $K{3,3}$ não são planares.
+\end{itemize}
+\vone
+\vone
+\centering
+\include{Figuras/grafo_planar_4}
+
+\end{ftst}
+
+
+%=====
+
+
+\end{document}

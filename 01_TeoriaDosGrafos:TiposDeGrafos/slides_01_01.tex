@@ -5,7 +5,7 @@
 
 % Specific definitions
 \title[]{Algoritmos e Estruturas de Dados III}
-\subtitle[]{Tipos de Grafos}
+\subtitle[]{Tipos de Grafos - Parte 1}
 \author[]{Patrícia Lucas\\{\footnotesize }}
 \institute{Bacharelado em Sistemas de Informação \\ IFNMG  - Campus Salinas}
 \date{\scriptsize Salinas\\Dezembro 2020}
@@ -173,43 +173,77 @@ Ex: circuito de $v_1$ a $v_1$ de comprimento 5.
 
 %=====
 
-\begin{ftst}{Ciclo}{Tipos de Grafos}
-É um circuito onde nenhum vértice é repetido.
-\vone
-Um laço é um ciclo de comprimento 1.
-\vone
-Ex: ciclo de $v_1$ a $v_1$ de comprimento 4.
+\begin{ftst}{Caminhos em dígrafos}{Tipos de Grafos}
+\begin{enumerate}
+    \item Existe um caminho de $v_1$ a $v_6$?
+    \item Como definir os graus do vértice em um dígrafo?
+\end{enumerate}
 
 \vone
 \centering
-\include{Figuras/ciclo}\\
+\include{Figuras/caminhos_digrafos}\\
 
 
 \end{ftst}
 
+
 %=====
 
-\begin{ftst}{Grau de um Vértice}{Teoria dos grafos}
+\begin{ftst}{Caminhos em dígrafos}{Tipos de Grafos}
 \justifying
 O grau de um vértice é definido como o número de arestas incidentes em tal vértice.
 \vone
 \vone
+\vone
+\begin{minipage}{.5\textwidth}
 \centering
-\include{Figuras/grau_vertice}\\
+        \include{Figuras/caminhos_digrafos_2}\\
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\centering
+        \begin{table}[]
+            \footnotesize
+            \begin{tabular}{|c|c|c|}
+            \hline
+            Vértice & \begin{tabular}[c]{@{}c@{}}Grau de \\ entrada\end{tabular} & \begin{tabular}[c]{@{}c@{}}Grau de \\ saída\end{tabular} \\ \hline
+            $v_1$ & 0 & 2 \\ \hline
+            $v_2$ & 1 & 1 \\ \hline
+            $v_3$ & 2 & 0 \\ \hline
+            $v_4$ & 0 & 0 \\ \hline
+            $v_5$ & 1 & 2 \\ \hline
+            $v_6$ & 1 & 1 \\ \hline
+            $v_7$ & 1 & 0 \\ \hline
+            \end{tabular}
+        \end{table}
+\end{minipage}%
+\end{ftst}
+
+%=====
+
+\begin{ftst}{Caminhos em dígrafos}{Tipos de Grafos}
+Um grafo é conexo se existe um caminho ligando quaisquer dois vértices.
+\vone
+
+\vone
+\centering
+\include{Figuras/grafo_conexo}\\
 
 
 \end{ftst}
 
 %=====
 
-\begin{ftst}{Exercício}{Teoria dos grafos}
-\justifying
-\textbf{Teorema 1}: a soma dos graus de todos os vértices de um grafo G é igual a duas vezes o número de arestas do grafo.
-\vone
-\textbf{Teorema 2}: o número de vértices de grau ímpar de um grafo é sempre par.
-\vone
-\textbf{Pergunta}: Se G é um grafo com 14 vértices e 25 arestas, cujos vértices têm grau 3 ou 5, quantos vértices tem grau 3 e quantos tem grau 5?
+\begin{ftst}{Dígrafo conexo}{Tipos de Grafos}
+\begin{itemize}
+    \item Um dígrafo é dito \textbf{fortemente conexo} se, para todos os pares de vértices $(v_i,v_j)$, existe caminho de vi para $v_j$ e de $v_j$ para $v_i$. 
+    \item Um dígrafo é \textbf{fracamente conexo} se apenas sua “versão não-direcionada” for conexa.
+\end{itemize}
 
+\vone
+
+\vone
+\centering
+\include{Figuras/digrafo_conexo}\\
 
 
 \end{ftst}
