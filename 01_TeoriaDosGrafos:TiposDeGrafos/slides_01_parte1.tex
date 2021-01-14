@@ -192,46 +192,13 @@ Ex: ciclo de $v_1$ a $v_1$ de comprimento 4.
 \begin{ftst}{Caminhos em dígrafos}{Tipos de Grafos}
 \begin{enumerate}
     \item Existe um caminho de $v_1$ a $v_6$?
-    \item Como definir os graus do vértice em um dígrafo?
 \end{enumerate}
 
 \vone
 \centering
-\include{Figuras/caminhos_digrafos}\\
+\include{Figuras/caminhos_digrafos_2}\\
 
 
-\end{ftst}
-
-
-%=====
-
-\begin{ftst}{Caminhos em dígrafos}{Tipos de Grafos}
-\justifying
-O grau de um vértice é definido como o número de arestas incidentes em tal vértice.
-\vone
-\vone
-\vone
-\begin{minipage}{.5\textwidth}
-\centering
-        \include{Figuras/caminhos_digrafos_2}\\
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-\centering
-        \begin{table}[]
-            \footnotesize
-            \begin{tabular}{|c|c|c|}
-            \hline
-            Vértice & \begin{tabular}[c]{@{}c@{}}Grau de \\ entrada\end{tabular} & \begin{tabular}[c]{@{}c@{}}Grau de \\ saída\end{tabular} \\ \hline
-            $v_1$ & 0 & 2 \\ \hline
-            $v_2$ & 1 & 1 \\ \hline
-            $v_3$ & 2 & 0 \\ \hline
-            $v_4$ & 0 & 0 \\ \hline
-            $v_5$ & 1 & 2 \\ \hline
-            $v_6$ & 1 & 1 \\ \hline
-            $v_7$ & 1 & 0 \\ \hline
-            \end{tabular}
-        \end{table}
-\end{minipage}%
 \end{ftst}
 
 %=====
@@ -251,7 +218,7 @@ Um grafo é conexo se existe um caminho ligando quaisquer dois vértices.
 
 \begin{ftst}{Dígrafo conexo}{Tipos de Grafos}
 \begin{itemize}
-    \item Um dígrafo é dito \textbf{fortemente conexo} se, para todos os pares de vértices $(v_i,v_j)$, existe caminho de vi para $v_j$ e de $v_j$ para $v_i$. 
+    \item Um dígrafo é dito \textbf{fortemente conexo} se, para todos os pares de vértices $(v_i,v_j)$, existe caminho de $v_i$ para $v_j$ e de $v_j$ para $v_i$. 
     \item Um dígrafo é \textbf{fracamente conexo} se apenas sua “versão não-direcionada” for conexa.
 \end{itemize}
 
